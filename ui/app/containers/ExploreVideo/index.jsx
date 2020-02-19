@@ -64,4 +64,4 @@ export default class ExploreVideo extends React.Component {
       </section>
     );
   }
-}        
+}

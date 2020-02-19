@@ -1,5 +1,5 @@
 import React from 'react';
-
+// MAIN VIDEO PLAYER
 export default function VideoDetail({ video }) {
   if (!video) {
     return (

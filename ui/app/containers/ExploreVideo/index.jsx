@@ -41,7 +41,9 @@ export default function ExploreVideo() {
   const videoSearch = _.debounce((searchValue, options) => fetchVideos(searchValue, options), 400);
 
   return (
-    <section id="video-component">
+    <section
+      id="video-component"
+    >
       <SearchBar onSearchChange={videoSearch} />
       <VideoDetail video={selectedVideo} />
       <VideoList onVideoSelect={selectVideo} videos={videos} />

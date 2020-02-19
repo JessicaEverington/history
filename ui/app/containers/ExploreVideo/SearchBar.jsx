@@ -38,18 +38,23 @@ export default function SearchBar({
   };
 
   return (
-    <section id="search-bar">
+    <section
+      id="search-bar"
+      className="row"
+    >
       <input
         onChange={event => handleSearchChange(event.target.value)}
         placeholder={defaults.instruction}
         title={defaults.instruction}
         value={searchValue}
         tabIndex="1"
+        className="form-control col-6 mx-2"
       />
       <select
         defaultValue="relevance"
         onChange={event => onOrderChange(event.target.value)}
         tabIndex="2"
+        className="form-control col-4 mx-2"
       >
         <option value="date">
           Date of creation

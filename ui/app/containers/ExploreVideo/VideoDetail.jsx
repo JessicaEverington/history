@@ -13,18 +13,30 @@ export default function VideoDetail({ video }) {
   const url = `https://www.youtube.com/embed/${videoId}`;
 
   return (
-    <main id="video-detail">
-      <section id="video-player">
+    <section
+      id="video-detail"
+      className="my-4 d-flex justify-content-center border border-info rounded"
+    >
+      <div
+        id="video-player"
+        className="mx-2 my-2"
+      >
         <iframe title="YouTube video player" src={url} />
-      </section>
-      <section id="video-text">
-        <div id="video-title">
+      </div>
+      <div
+        id="video-text"
+        className="mx-3 my-2"
+      >
+        <div
+          id="video-title"
+          className="h3 mb-3"
+        >
           {video.snippet.title}
         </div>
-        <div id="video-description">
+        <p id="video-description">
           {video.snippet.description}
-        </div>
-      </section>
-    </main>
+        </p>
+      </div>
+    </section>
   );
 }

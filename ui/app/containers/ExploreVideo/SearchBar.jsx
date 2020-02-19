@@ -76,27 +76,38 @@ export default class SearchBar extends React.Component {
     } = this.state;
 
     return (
-      <section id="search-bar">
-        <input
-          onChange={event => this.onSearchChange(event.target.value)}
-          placeholder={SearchBar.defaults.instruction}
-          title={SearchBar.defaults.instruction}
-          value={searchValue}
-          tabIndex="1"
-        />
-        <select
-          defaultValue="relevance"
-          onChange={event => this.onOrderChange(event.target.value)}
-          tabIndex="2"
+      <div
+        className="mt-5 d-flex justify-content-center"
+      >
+        <div
+          id="search-bar"
+          className="row"
         >
-          <option value="date">
-            Date of creation
-          </option>
-          <option value="relevance">
-            Relevance
-          </option>
-        </select>
-      </section>
+          <input
+            onChange={event => this.onSearchChange(event.target.value)}
+            placeholder={SearchBar.defaults.instruction}
+            title={SearchBar.defaults.instruction}
+            value={searchValue}
+            tabIndex="1"
+            className="form-control col-6 mx-2"
+          />
+          <select
+            defaultValue="relevance"
+            onChange={event => this.onOrderChange(event.target.value)}
+            tabIndex="2"
+            className="form-control col-4 mx-2"
+          >
+            <option
+              value="date"
+            >
+                Date of creation
+            </option>
+            <option value="relevance">
+                Relevance
+            </option>
+          </select>
+        </div>
+      </div>
     );
   }
 }

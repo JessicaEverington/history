@@ -8,7 +8,10 @@ const A = styled.a`
   color: #41addd;
 
   &:hover {
-    color: #6cc0e5;
+    color: #fff;
+    text-decoration: none
+    border: 2px solid #41addd;
+    background-color: #41addd;
   }
 `;
 

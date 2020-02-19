@@ -24,7 +24,9 @@ const AppWrapper = styled.div`
 
 export default function App() {
   return (
-    <AppWrapper>
+    <AppWrapper
+      className="container"
+    >
       <Helmet
         titleTemplate="%s - History"
         defaultTitle="History"

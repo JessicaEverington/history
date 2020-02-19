@@ -8,7 +8,9 @@ import messages from './messages';
 
 function Footer() {
   return (
-    <Wrapper>
+    <Wrapper
+      className="footer mt-auto py-3 text-muted"
+    >
       <section>
         <FormattedMessage {...messages.licenseMessage} />
       </section>

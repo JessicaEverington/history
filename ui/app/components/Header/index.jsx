@@ -7,7 +7,9 @@ import messages from './messages';
 
 function Header() {
   return (
-    <div>
+    <nav
+      className="navbar navbar-expand-md navbar-dark fixed-top bg-dark justify-content-center"
+    >
       <NavBar>
         <HeaderLink to="/">
           <FormattedMessage {...messages.home} />
@@ -16,7 +18,7 @@ function Header() {
           <FormattedMessage {...messages.features} />
         </HeaderLink>
       </NavBar>
-    </div>
+    </nav>
   );
 }
 

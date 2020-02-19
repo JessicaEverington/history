@@ -54,11 +54,14 @@ export default class ExploreVideo extends React.Component {
     const videoSearch = _.debounce((searchValue, options) => this.videoSearch(searchValue, options), 400);
 
     return (
-      <section id="video-component">
+      <section
+        id="video-component"
+        className="container pt-5 px-5 mt-5"
+      >
         <SearchBar onSearchChange={videoSearch} />
         <VideoDetail video={selectedVideo} />
         <VideoList onVideoSelect={currentVideo => this.setState({ selectedVideo: currentVideo })} videos={videos} />
       </section>
     );
   }
-}
+}        

@@ -43,6 +43,7 @@ export default function ExploreVideo() {
   return (
     <section
       id="video-component"
+      className="mt-5 pt-5"
     >
       <SearchBar onSearchChange={videoSearch} />
       <VideoDetail video={selectedVideo} />

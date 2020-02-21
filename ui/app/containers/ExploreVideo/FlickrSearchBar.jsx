@@ -1,32 +1,28 @@
 /* global URL, window */
 import React, { useEffect, useState } from 'react';
-// import styled from 'styled-components';
 
 const defaults = {
-  geocode: '49.37885,10.18711',
-  instruction: 'Please enter a keyword or lat/long coordinates',
+  keyword: 'cake',
+  instruction: 'Please enter a keyword or lat,long coordinates',
   searchOrder: 'relevance',
 };
 
 const getQS = () => ((typeof URL === 'undefined') ? '' : new URL(window.location.href).search);
 
-// output sample '49.25,-123.1' or ''
 function getGeoCode(qs) {
   const matches = /(-?\d+(\.\d+)?),\s*(-?\d+(\.\d+)?)/.exec(qs);
   return (matches) ? matches[0] : '';
 }
 
-export default function SearchBar({
+export default function FlickrSearchBar({
   onSearchChange: changeSearch,
 }) {
   const [searchOrder, setSearchOrder] = useState(defaults.searchOrder);
-  const [searchValue, setSearchValue] = useState(getGeoCode(getQS()) || defaults.geocode);
-  // const [showingCats, catButtonPressed] = useState(false); // ALLOWS US TO CHANGE THE  VALUE OF THE CAT STATE BUTTON
+  const [searchValue, setSearchValue] = useState(getGeoCode(getQS()) || defaults.keyword);
 
   // this is an "on-load" event
   useEffect(() => {
     changeSearch(searchValue, { searchOrder });
-    // showCats(true); // execute once
   }, []);
 
   const handleSearchChange = (keyword) => {
@@ -40,16 +36,6 @@ export default function SearchBar({
 
     changeSearch(searchValue, { searchOrder: order });
   };
-
-  // const CatButton = styled.button`
-  //   display: inline-block;
-  //   border-radius: 3px;
-  //   padding: .5rem 0;
-  //   margin: .5rem 1rem;
-  //   width: 11rem;
-  //   background: ${showingCats ? '#333' : 'black'};
-  //   color: ${showingCats ? 'mediumpurple' : 'hotpink'};
-  // `;
 
   return (
     <section
@@ -87,16 +73,6 @@ export default function SearchBar({
         >
           Push for cats
         </button>
-        {/* CREATING A PAGE-SPECIFIC BUTTON COMPONENT */}
-        {/* <CatButton
-          type="button"
-          onClick={() => {
-            changeSearch('russian blue');
-            catButtonPressed(true);
-          }}
-        >
-          PUSH FOR CATS
-        </CatButton> */}
       </div>
     </section>
   );

@@ -3,9 +3,12 @@ import React from 'react';
 export default function VideoDetail({ video }) {
   if (!video) {
     return (
-      <section>
-        Loading...
-      </section>
+      // <section>
+      //   Loading...
+      // </section>
+      <div className="spinner-border text-info" role="status">
+        <span className="sr-only">Loading...</span>
+      </div>
     );
   }
 
@@ -15,13 +18,21 @@ export default function VideoDetail({ video }) {
   return (
     <section
       id="video-detail"
-      className="my-4 d-flex justify-content-center border border-info rounded"
+      className="my-4 d-flex justify-content-md-center border border-info rounded"
     >
       <div
         id="video-player"
         className="mx-2 my-2"
       >
-        <iframe title="YouTube video player" src={url} />
+        <iframe
+          title="YouTube video player"
+          width="560"
+          height="315"
+          src={url}
+          frameBorder="0"
+          allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+          allowFullScreen
+        />
       </div>
       <div
         id="video-text"

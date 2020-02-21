@@ -5,6 +5,7 @@ import { Switch, Route } from 'react-router-dom';
 
 import AlbumViewPage from '../AlbumViewPage/Loadable';
 import ExploreVideo from '../ExploreVideo';
+// import ExploreMedia from '../ExploreMedia';
 import HomePage from '../HomePage/Loadable';
 import FeaturePage from '../FeaturePage/Loadable';
 import GalleryViewPage from '../GalleryViewPage/Loadable';
@@ -24,9 +25,7 @@ const AppWrapper = styled.div`
 
 export default function App() {
   return (
-    <AppWrapper
-      className="container"
-    >
+    <AppWrapper>
       <Helmet
         titleTemplate="%s - History"
         defaultTitle="History"
@@ -39,6 +38,7 @@ export default function App() {
         <Route path="/album/view/:album" component={AlbumViewPage} />
         <Route path="/features" component={FeaturePage} />
         <Route path="/explore" component={ExploreVideo} />
+        {/* <Route path="/explore" component={ExploreMedia} /> */}
         <Route path="/gallery/view/:gallery" component={GalleryViewPage} />
         <Route path="" component={NotFoundPage} />
       </Switch>

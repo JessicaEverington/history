@@ -18,6 +18,11 @@ const GlobalStyle = createGlobalStyle`
   label {
     line-height: 1.5em;
   }
+
+  .card:hover {
+    background-color: rgba(23, 162, 184, 0.15);
+    cursor: pointer;
+  }
 `;
 
 export default GlobalStyle;

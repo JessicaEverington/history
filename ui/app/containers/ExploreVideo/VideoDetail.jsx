@@ -22,17 +22,15 @@ export default function VideoDetail({ video }) {
     >
       <div
         id="video-player"
-        className="mx-2 my-2"
+        className="mx-2 my-2 col-sm-8 col-sm-offset-2"
       >
-        <iframe
-          title="YouTube video player"
-          width="560"
-          height="315"
-          src={url}
-          frameBorder="0"
-          allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-          allowFullScreen
-        />
+        <div className="embed-responsive embed-responsive-16by9">
+          <iframe
+            title="YouTube video player"
+            className="embed-responsive-item"
+            src={url}
+          />
+        </div>
       </div>
       <div
         id="video-text"

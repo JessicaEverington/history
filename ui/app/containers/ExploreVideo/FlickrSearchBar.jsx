@@ -51,7 +51,7 @@ export default function FlickrSearchBar({
           tabIndex="1"
           className="form-control col-6 mx-2"
         />
-        <select
+        {/* <select
           defaultValue="relevance"
           onChange={event => onOrderChange(event.target.value)}
           tabIndex="2"
@@ -63,7 +63,7 @@ export default function FlickrSearchBar({
           <option value="relevance">
             Relevance
           </option>
-        </select>
+        </select> */}
 
         {/* ADDING A  BUTTON */}
         <button
